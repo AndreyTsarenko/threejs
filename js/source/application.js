@@ -6,39 +6,16 @@
  * To change this template use File | Settings | File Templates.
  */
 (function () {
-    window.application = {};
-    require.config({
-        baseUrl: "js",
-        path: {
-            text: "lib/requirejs/text"
-        }
+    ymaps.ready(function () {
+        window.map = new ymaps.Map("map-canvas", {
+            center: [30.484949,50.518622],
+            zoom: 15
+        });
     });
-    require(["lib/three/three.min"], function () {
-        /**
-         * step one
-         */
-        var scene = application.scene = new THREE.Scene();
-        var camera = application.camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000 );
-        var renderer = application.renderer = new THREE.WebGLRenderer();
-        renderer.setSize(window.innerWidth, innerHeight);
-        document.body.appendChild(renderer.domElement);
-        /**
-         * step two
-         */
-        var geometry = new THREE.CubeGeometry(1, 1, 1);
-        var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
-        var cube = application.cube = new THREE.Mesh(geometry, material);
-        scene.add(cube);
-
-        camera.position.z = 5;
-
-        function render () {
-            requestAnimationFrame(render);
-            cube.rotation.x += 0.01;
-            cube.rotation.y += 0.01;
-//            cube.rotation.z += 0.01;
-            renderer.render(scene, camera);
-        }
-        render();
-    });
+    window.makePlaceMark = function () {
+         return new ymaps.Placemark([30.484949,50.518622], {
+            hintContent: "hello world",
+            balloonContent: "Andrey Tsarenko"
+        });
+    }
 })();
