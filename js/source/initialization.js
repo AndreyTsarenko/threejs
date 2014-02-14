@@ -13,16 +13,46 @@
         require(["ModelViewCollectionRouter/Router"], function (Router) {
             Application = Router.extend({
                 /**
+                 * @description Shown page in the website
+                 */
+                $active_page: {},
+                /**
+                 * @description All page collections on the website
+                 */
+                $pages: null,
+                /**
                  * @description Entry point of application
                  */
                 initialize: function () {
-                    debugger;
+                    var page_itited = this.$initPages();
+                    Backbone.history.start({pushState: true});
+                },
+                /**
+                 *
+                 */
+                $initPages: function () {
+                    var def = $.Deferred();
+                    $.post("get_pages", function (response, state, object) {
+                        if (state === "success") {
+                            alert("Hello world");
+                        } else {
+                            alert("server is not replying");
+                        }
+                    });
+                    return def.promise();
                 },
                 /**
                  * @description backbone routers
                  */
                 routes: {
-
+                    "page-:page": "turnPage"
+                },
+                /**
+                 * @description Method that turn current page
+                 * @param page_name
+                 */
+                turnPage: function (page_name) {
+                    debugger;
                 }
             });
             window.app = new Application();
