@@ -6,16 +6,33 @@
  * To change this template use File | Settings | File Templates.
  */
 (function () {
-    ymaps.ready(function () {
-        window.map = new ymaps.Map("map-canvas", {
-            center: [30.484949,50.518622],
-            zoom: 15
+    window.app = {
+        MapAPI: {}
+    };
+    /**
+     *
+     */
+    function initialize () {
+        require([], function (NavigationPanel, HomePage) {
+
         });
+    };
+    /**
+     *
+     */
+    require.config({
+        path: {
+            text: "js/lib/require/text"
+        }
     });
-    window.makePlaceMark = function () {
-         return new ymaps.Placemark([30.484949,50.518622], {
-            hintContent: "hello world",
-            balloonContent: "Andrey Tsarenko"
-        });
-    }
+    /**
+     *
+     */
+    require([
+        "../lib/jQuery/jquery",
+        "../lib/underscore/underscore",
+        "../lib/backbone/backbone"
+    ], function (jquery, underscrore, backbone) {
+        initialize();
+    });
 })();
