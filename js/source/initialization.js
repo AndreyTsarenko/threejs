@@ -24,21 +24,28 @@
                  * @description Entry point of application
                  */
                 initialize: function () {
-                    var page_itited = this.$initPages();
+                    var pages = this.$getPages();
+                    pages.then(this.$initPages.bind(this));
                     Backbone.history.start({pushState: true});
                 },
                 /**
                  *
                  */
-                $initPages: function () {
+                $initPages: function (pages_config) {
+                    
+                },
+                /**
+                 *
+                 */
+                $getPages: function () {
                     var def = $.Deferred();
                     $.post("get_pages", function (response, state, object) {
                         if (state === "success") {
-                            alert("Hello world");
+                            def.resolve(JSON.parse(response));
                         } else {
                             alert("server is not replying");
                         }
-                    });
+                    }.bind(this));
                     return def.promise();
                 },
                 /**

@@ -1,0 +1,24 @@
+{
+    "mongoose": {
+        "url": "mongodb://localhost/chat",
+        "options": {
+            "server": {
+                "socketOptions": {
+                    "keepAlive": 1
+                }
+            }
+        }
+    },
+    "pages": [
+        {
+            "name": "login",
+            "window": true,
+            "navigation": false
+        },
+        {
+            "name": "home",
+            "window": false,
+            "navigation": true
+        }
+    ]
+}
