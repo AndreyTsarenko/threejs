@@ -20,6 +20,7 @@
                  * @description All page collections on the website
                  */
                 $pages: null,
+                $pages_view: null,
                 /**
                  * @description Entry point of application
                  */
@@ -32,7 +33,13 @@
                  *
                  */
                 $initPages: function (pages_config) {
-                    
+                    require(["Pages/pageCollection", "Pages/pageView"], function (PageCollection, PageView) {
+                        this.$pages = new PageCollection(pages_config);
+                        this.$pages_view = new PageView({
+                            collection: this.$pages,
+                            render_to: $("body")
+                        });
+                    }.bind(this));
                 },
                 /**
                  *
@@ -69,8 +76,8 @@
      * @description configuration of require js
      */
     require.config({
-        path: {
-            text: "js/lib/require/text"
+        paths: {
+            text: "../lib/requirejs/text"
         }
     });
     /**

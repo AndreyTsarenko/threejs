@@ -6,5 +6,9 @@
  * To change this template use File | Settings | File Templates.
  */
 define([], function () {
-    return Backbone.Model.extend({});
+    return Backbone.Model.extend({
+        defaults: {
+            active: Boolean
+        }
+    });
 });
