@@ -16,12 +16,14 @@ define([], function () {
          * @public
          * @param {Object} Model Backbone Model
          */
-        setActiveModel: function (Model) {
-            if (this.$active_model) {
-                this.$active_model.set("active", false);
+        toggleActiveModel: function (Model) {
+            if (this.$active_model !== Model) {
+                if (this.$active_model) {
+                    this.$active_model.set("active", false);
+                }
+                Model.set("active", true);
+                this.$active_model = Model;
             }
-            Model.set("active", true);
-            this.$active_model = Model;
         },
         /**
          * @description Method that return active model in collection

@@ -16,6 +16,7 @@
                  * @description Shown page in the website
                  */
                 $active_page: {},
+                $hash_to_turn: null,
                 /**
                  * @description All page collections on the website
                  */
@@ -27,7 +28,7 @@
                 initialize: function () {
                     var pages = this.$getPages();
                     pages.then(this.$initPages.bind(this));
-                    Backbone.history.start({pushState: true});
+                    Backbone.history.start({pushState: false});
                 },
                 /**
                  *
@@ -37,8 +38,14 @@
                         this.$pages = new PageCollection(pages_config);
                         this.$pages_view = new PageView({
                             collection: this.$pages,
-                            render_to: $("body")
+                            render_to: $("#page-container")
                         });
+                        if (this.$hash_to_turn) {
+                            this.navigate(this.$hash_to_turn, {trigger: true, replace: true});
+                            this.$hash_to_turn = null;
+                        } else {
+                            this.turnPage("home");
+                        }
                     }.bind(this));
                 },
                 /**
@@ -59,14 +66,27 @@
                  * @description backbone routers
                  */
                 routes: {
-                    "page-:page": "turnPage"
+                    "page-:name/popup-:info": "turnPage"
                 },
                 /**
-                 * @description Method that turn current page
-                 * @param page_name
+                 * @description Method that turn home page if she is exist
                  */
-                turnPage: function (page_name) {
-                    debugger;
+                /**
+                 * @description Method that turn page if she is exist
+                 * @param page_name
+                 * @param window_info
+                 */
+                turnPage: function (page_name, window_info) {
+                    var pageModel;
+                    if (this.$pages) {
+                        pageModel = this.$pages.findWhere({
+                            name: page_name
+                        });
+                        this.$pages.toggleActiveModel(pageModel);
+                    } else {
+                        this.$hash_to_turn = location.hash;
+                        location.hash = "";
+                    }
                 }
             });
             window.app = new Application();
@@ -77,7 +97,9 @@
      */
     require.config({
         paths: {
-            text: "../lib/requirejs/text"
+            text: "../lib/requirejs/text",
+            jquery: "../lib/jQuery/jquery",
+            underscore: "../lib/underscore/underscore"
         }
     });
     /**

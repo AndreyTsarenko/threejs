@@ -11,14 +11,20 @@
     },
     "pages": [
         {
-            "name": "login",
-            "window": true,
-            "navigation": false
+            "name": "home",
+            "type": "page"
         },
         {
-            "name": "home",
-            "window": false,
-            "navigation": true
+            "name": "login",
+            "type": "pop-up"
+        },
+        {
+            "name": "warning",
+            "type": "pop-up"
+        },
+        {
+            "name": "about",
+            "type": "page"
         }
     ]
 }

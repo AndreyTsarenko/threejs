@@ -26,7 +26,24 @@ define(["../ModelViewCollectionRouter/View", "text!/templates/page_tempate.xml"]
         initModelView: function (config) {
             var Model = config.model.toJSON();
             this.$el = $(this.model_tempate(Model));
+            this.addEventListenerToModel(config.model);
+        },
+        /**
+         *
+         * @param Model
+         */
+        addEventListenerToModel: function (Model) {
+            Model.on("change:active", function (Model, value, i_dont_know_what_is_it) {
+                if (value === true) {
+                    this.$el.attr("shown", "true");
+                } else {
+                    this.$el.attr("shown", "false");
+                }
+            }.bind(this));
         }
+        /**
+         *
+         */
     });
     return pageView;
 });
