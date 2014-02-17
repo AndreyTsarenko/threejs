@@ -44,7 +44,7 @@
                             this.navigate(this.$hash_to_turn, {trigger: true, replace: true});
                             this.$hash_to_turn = null;
                         } else {
-                            this.turnPage("home");
+                            this.navigate("#page-home", {trigger: true, replace: true});
                         }
                     }.bind(this));
                 },
@@ -69,24 +69,37 @@
                     "page-:name/popup-:info": "turnPage"
                 },
                 /**
-                 * @description Method that turn home page if she is exist
-                 */
-                /**
                  * @description Method that turn page if she is exist
                  * @param page_name
-                 * @param window_info
+                 * @param [window_info] information about opened windows like -> login&warning
                  */
                 turnPage: function (page_name, window_info) {
-                    var pageModel;
-                    if (this.$pages) {
-                        pageModel = this.$pages.findWhere({
+                    var pageModel,
+                        pages = this.$pages;
+                    if (pages) {
+                        pageModel = pages.findWhere({
                             name: page_name
                         });
-                        this.$pages.toggleActiveModel(pageModel);
+                        pages.toggleActiveModel(pageModel);
+                        pages.openWindow(window_info);
                     } else {
                         this.$hash_to_turn = location.hash;
                         location.hash = "";
                     }
+                },
+                /**
+                 *
+                 */
+                open: function (object) {
+                    var origin = location.origin;
+                    var hash = location.hash;
+                    var part_url = hash.split("/");
+                    var page, popup;
+                    if (part_url > 1) {
+                        
+                    }
+
+                    debugger;
                 }
             });
             window.app = new Application();
