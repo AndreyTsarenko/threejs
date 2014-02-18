@@ -7,15 +7,7 @@
  */
 define(["../ModelViewCollectionRouter/View"], function (View) {
     var NavigationView = View.extend({
-        /**
-         *
-         */
-        initCollectionView: function (config) {
-            window.navigation = this;
-            config.collection.on("set", function () {
-                debugger;
-            }.bind(this));
-        }
+
     });
     return NavigationView;
 });

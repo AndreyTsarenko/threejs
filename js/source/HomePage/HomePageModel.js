@@ -8,7 +8,7 @@
 define(["../ModelViewCollectionRouter/Model"], function (Model) {
     var NavigationModel = Model.extend({
         defaults: {
-            label: ""
+
         }
     });
     return NavigationModel;

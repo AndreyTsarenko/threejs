@@ -16,7 +16,7 @@ define(["../ModelViewCollectionRouter/View", "text!/templates/page_tempate.xml"]
          * @param config
          */
         initCollectionView: function (config) {
-            this._root_el = config.render_to;
+            this.$el = config.render_to;
             this._initModelViews(config.collection, pageView);
             this._renderModels();
         },

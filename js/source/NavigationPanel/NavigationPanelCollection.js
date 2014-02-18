@@ -5,9 +5,33 @@
  * Time: 16:03
  * To change this template use File | Settings | File Templates.
  */
-define(["../ModelViewCollectionRouter/Collection"], function (Collection) {
+define(["../ModelViewCollectionRouter/Collection", "./NavigationPanelModel",
+    "./NavigationPanelView"], function (Collection, Model, View) {
     var NavigationCollection = Collection.extend({
-
+        /**
+         * @description Define
+         * @param collection
+         * @param pageRouter
+         */
+        model: Model,
+        $pageRouter: null,
+        $view: null,
+        /**
+         *
+         * @param collection
+         * @param pageRouter
+         */
+        initialize: function (collection, pageRouter) {
+            this.$pageRouter = pageRouter;
+            this.$view = new View({
+                collection: this,
+                render_to: $("#navigation-panel")
+            });
+            $.post("get_navigation", function (resp) {
+                var config = JSON.parse(resp);
+                this.set(config);
+            }.bind(this));
+        }
     });
     return NavigationCollection;
 });

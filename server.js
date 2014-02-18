@@ -7,3 +7,7 @@ app.use(express.static(__dirname));
 app.post("/get_pages", function (req, res) {
     res.send(JSON.stringify(config.pages));
 });
+
+app.post("/get_navigation", function (req, res) {
+    res.send(JSON.stringify(config.navigation));
+});

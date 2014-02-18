@@ -11,7 +11,6 @@ define([], function () {
          * @protected
          */
         _models_view: [],
-        _root_el: null,
         /**
          * @param config
          */
@@ -38,17 +37,22 @@ define([], function () {
             }.bind(this));
         },
         /**
-         * @description Method that render all models view to root_el;
+         * @description Method that render all models view to $el;
          * @protected
+         * @param {view} [model_view]
          */
-        _renderModels: function () {
+        _renderModels: function (model_view) {
             var i, len;
-            if (this._root_el) {
-                for (i = 0, len = this._models_view.length; i < len; i++) {
-                    this._root_el.append(this._models_view[i].$el);
+            if (this.$el) {
+                if (model_view) {
+                    this.$el.append(model_view.$el);
+                } else {
+                    for (i = 0, len = this._models_view.length; i < len; i++) {
+                        this.$el.append(this._models_view[i].$el);
+                    }
                 }
             } else {
-                console.log("_root_el is not defined");
+                console.log("$el in collection is not defined");
             }
         },
         /**

@@ -23,8 +23,50 @@
             "type": "pop-up"
         },
         {
-            "name": "about",
+            "name": "searching",
             "type": "page"
+        }
+    ],
+    "navigation": [
+        {
+            "label": "Купить недвижимость",
+            "sub_menu": {
+                "label": ""
+            }
+        },
+        {
+            "label": "Продать недвижимость"
+        },
+        {
+            "label": "Сдать недвижимость"
+        },
+        {
+            "label": "Снять недвижимость",
+            "sub_menu": [
+                {
+                    "label": "Квартиры",
+                    "page:": "searching",
+                    "page_parameters": "flat"
+                },
+                {
+                    "label": "Дома",
+                    "page:": "searching",
+                    "page_parameters": "house"
+                },
+                {
+                    "label": "Земля",
+                    "page:": "searching",
+                    "page_parameters": "earth"
+                },
+                {
+                    "label": "Офисы и склады",
+                    "page:": "searching",
+                    "page_parameters": "office"
+                }
+            ]
+        },
+        {
+            "name": "О нас"
         }
     ]
 }

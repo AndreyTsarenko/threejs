@@ -10,10 +10,14 @@
      * @description initialization of application
      */
     function initialize () {
-        require(["PageRouter/pageRouter"], function (pageRouter) {
+        require(["PageRouter/pageRouter","NavigationPanel/NavigationPanelCollection"],
+            function (pageRouter, NavigationPanelCollection) {
+            var Router = new pageRouter();
+            var NavigationPanelCollection = new NavigationPanelCollection([], Router);
             window.app = {
-                router: new pageRouter()
+                router: Router
             };
+
         });
     };
     /**
