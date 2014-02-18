@@ -29,7 +29,7 @@ define(["../ModelViewCollectionRouter/Collection", "./NavigationPanelModel",
             });
             $.post("get_navigation", function (resp) {
                 var config = JSON.parse(resp);
-                this.set(config);
+                this.reset(config);
             }.bind(this));
         }
     });

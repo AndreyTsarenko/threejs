@@ -5,16 +5,29 @@
  * Time: 16:03
  * To change this template use File | Settings | File Templates.
  */
-define(["../ModelViewCollectionRouter/View"], function (View) {
+define(["../ModelViewCollectionRouter/View",
+    "text!/templates/navigation_element.xml"], function (View, Navigation_element) {
     var NavigationView = View.extend({
+        $el_template: _.template(Navigation_element),
         /**
          *
          */
         initCollectionView: function (config) {
+            debugger;
+            this.$el = config.render_to;
             window.navigation = this;
-            config.collection.on("set", function () {
-                debugger;
+            config.collection.on("reset", function () {
+                this._initModelViews(this.collection, NavigationView);
+                this._renderModels();
             }.bind(this));
+        },
+        /**
+         *
+         */
+        initModelView: function (config) {
+            var Model = config.model.toJSON();
+            this.$el = $(this.$el_template(Model));
+//            this.$el.html(this.$el_template(Model));
         }
     });
     return NavigationView;

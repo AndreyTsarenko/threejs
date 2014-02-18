@@ -49,6 +49,8 @@ define([], function () {
                 } else {
                     for (i = 0, len = this._models_view.length; i < len; i++) {
                         this.$el.append(this._models_view[i].$el);
+                        console.log(this.$el);
+                        console.log(this._models_view[i].$el);
                     }
                 }
             } else {
