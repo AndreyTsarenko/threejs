@@ -33,7 +33,7 @@ define(["../ModelViewCollectionRouter/Router"], function (Router) {
                 this.$pages = new PageCollection(pages_config);
                 this.$pages_view = new PageView({
                     collection: this.$pages,
-                    render_to: $("#page-container")
+                    render_to: $("body")
                 });
                 if (this.$hash_to_turn) {
                     this.navigate(this.$hash_to_turn, {trigger: true, replace: true});
@@ -135,7 +135,6 @@ define(["../ModelViewCollectionRouter/Router"], function (Router) {
                     }
                 }
             } else {
-                debugger;
                 position =  popup.indexOf(popup_ids);
                 popup.splice(position, 1);
             }
