@@ -6,7 +6,6 @@
 .nav-element-container {
     width: 20%;
     float: left;
-    text-align: center;
     vertical-align: center;
 }
 .nav-element-container .btn.nav:hover {
@@ -17,4 +16,23 @@
     font-size: 18px;
     background-color: #303030;
     color: #ffffff;
+    text-align: center;
+}
+.sub-menu-container li:hover {
+    background-color: #777777;
+}
+.nav-element-container:active .sub-menu-container {
+    display: none;
+}
+.nav-element-container:hover .sub-menu-container {
+    display: block;
+}
+.sub-menu-container {
+    margin-top: 1em;
+    line-height: 2em;
+    list-style-type: none;
+    background-color: #303030;
+    color: #ffffff;
+    text-indent: .5em;
+    display: none;
 }

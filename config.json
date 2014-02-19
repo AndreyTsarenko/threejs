@@ -31,17 +31,92 @@
         {
             "label": "Купить недвижимость",
             "id": "by",
-            "sub_menu": {
-                "label": ""
-            }
+            "sub_menu": [
+                {
+                    "label": "Квартиры",
+                    "page:": "searching",
+                    "page_parameters": "flat"
+                },
+                {
+                    "label": "Дома",
+                    "page:": "searching",
+                    "page_parameters": "house"
+                },
+                {
+                    "label": "Земля",
+                    "page:": "searching",
+                    "page_parameters": "earth"
+                },
+                {
+                    "label": "Офисы и склады",
+                    "page:": "searching",
+                    "page_parameters": "office"
+                },
+                {
+                    "label": "Login",
+                    "id": "log-in"
+                }
+            ]
         },
         {
             "label": "Продать недвижимость",
-            "id": "sell"
+            "id": "sell",
+            "sub_menu": [
+                {
+                    "label": "Квартиры",
+                    "page:": "searching",
+                    "page_parameters": "flat"
+                },
+                {
+                    "label": "Дома",
+                    "page:": "searching",
+                    "page_parameters": "house"
+                },
+                {
+                    "label": "Земля",
+                    "page:": "searching",
+                    "page_parameters": "earth"
+                },
+                {
+                    "label": "Офисы и склады",
+                    "page:": "searching",
+                    "page_parameters": "office"
+                },
+                {
+                    "label": "Login",
+                    "id": "log-in"
+                }
+            ]
         },
         {
             "label": "Сдать в оренду",
-            "id": "surrender"
+            "id": "surrender",
+            "sub_menu": [
+                {
+                    "label": "Квартиры",
+                    "page:": "searching",
+                    "page_parameters": "flat"
+                },
+                {
+                    "label": "Дома",
+                    "page:": "searching",
+                    "page_parameters": "house"
+                },
+                {
+                    "label": "Земля",
+                    "page:": "searching",
+                    "page_parameters": "earth"
+                },
+                {
+                    "label": "Офисы и склады",
+                    "page:": "searching",
+                    "page_parameters": "office"
+                },
+                {
+                    "label": "Login",
+                    "id": "log-in"
+                }
+            ]
         },
         {
             "label": "Снять в оренду",
@@ -68,7 +143,7 @@
                     "page_parameters": "office"
                 },
                 {
-                    "label": "login",
+                    "label": "Login",
                     "id": "log-in"
                 }
             ]
