@@ -13,12 +13,13 @@ define(["../ModelViewCollectionRouter/View",
          *
          */
         initCollectionView: function (config) {
-            debugger;
             this.$el = config.render_to;
             window.navigation = this;
             config.collection.on("reset", function () {
                 this._initModelViews(this.collection, NavigationView);
+                console.log("start collection");
                 this._renderModels();
+                console.log("end collection");
             }.bind(this));
         },
         /**

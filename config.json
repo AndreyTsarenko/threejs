@@ -30,18 +30,22 @@
     "navigation": [
         {
             "label": "Купить недвижимость",
+            "id": "by",
             "sub_menu": {
                 "label": ""
             }
         },
         {
-            "label": "Продать недвижимость"
+            "label": "Продать недвижимость",
+            "id": "sell"
         },
         {
-            "label": "Сдать недвижимость"
+            "label": "Сдать в оренду",
+            "id": "surrender"
         },
         {
-            "label": "Снять недвижимость",
+            "label": "Снять в оренду",
+            "id": "rent",
             "sub_menu": [
                 {
                     "label": "Квартиры",
@@ -62,11 +66,16 @@
                     "label": "Офисы и склады",
                     "page:": "searching",
                     "page_parameters": "office"
+                },
+                {
+                    "label": "login",
+                    "id": "log-in"
                 }
             ]
         },
         {
-            "name": "О нас"
+            "label": "login",
+            "id": "log-in"
         }
     ]
 }

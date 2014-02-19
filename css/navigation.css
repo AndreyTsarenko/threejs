@@ -1,0 +1,20 @@
+#navigation-panel {
+    position: fixed;
+    width: 100%;
+    min-width: 920px;
+}
+.nav-element-container {
+    width: 20%;
+    float: left;
+    text-align: center;
+    vertical-align: center;
+}
+.nav-element-container .btn.nav:hover {
+    background-color: #777777;
+}
+.nav-element-container .btn.nav {
+    line-height: 2em;
+    font-size: 18px;
+    background-color: #303030;
+    color: #ffffff;
+}

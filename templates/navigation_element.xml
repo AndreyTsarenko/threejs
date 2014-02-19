@@ -1,4 +1,4 @@
-<div class="nav-element-container">
-    <div class="btn nav-<%= label %>"></div>
+<div class="nav-element-container <%= id %>">
+    <div class="btn nav"><%= label %></div>
     <div class= "sub-menu-container"></div>
 </div>

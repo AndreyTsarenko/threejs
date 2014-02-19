@@ -10,7 +10,7 @@ define([], function () {
         /**
          * @protected
          */
-        _models_view: [],
+        _models_view: null,
         /**
          * @param config
          */
@@ -30,6 +30,7 @@ define([], function () {
          * @protected
          */
         _initModelViews: function (collection, View) {
+            this._models_view = this._models_view || [];
             collection.forEach(function (Model) {
                 this._models_view.push(new View({
                     model: Model
@@ -49,8 +50,6 @@ define([], function () {
                 } else {
                     for (i = 0, len = this._models_view.length; i < len; i++) {
                         this.$el.append(this._models_view[i].$el);
-                        console.log(this.$el);
-                        console.log(this._models_view[i].$el);
                     }
                 }
             } else {
