@@ -11,14 +11,17 @@ define([], function () {
          * @protected
          */
         _models_view: null,
+        $collection: null,
         /**
          * @param config
          */
         initialize: function (config) {
             if (config.model) {
+                this.$collection = config.model.collection;
                 this.initModelView(config);
             }
             if (config.collection) {
+                this.$collection = config.collection;
                 this.initCollectionView(config);
             }
         },

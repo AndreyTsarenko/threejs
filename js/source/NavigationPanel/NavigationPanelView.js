@@ -16,7 +16,6 @@ define(["../ModelViewCollectionRouter/View",
          *
          */
         initCollectionView: function (config) {
-            this.$collection = config.collection;
             this.$el = config.render_to;
             config.collection.on("reset", function () {
                 this._initModelViews(this.collection, NavigationView);
@@ -27,7 +26,6 @@ define(["../ModelViewCollectionRouter/View",
          *
          */
         initModelView: function (config) {
-            this.$collection = config.model.collection;
             var Model = config.model.toJSON();
             this.$el = $(this.$el_template(Model));
             if (Model.action) {

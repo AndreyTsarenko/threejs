@@ -14,10 +14,21 @@
             function (pageRouter, NavigationPanelCollection) {
             var Router = new pageRouter();
             var NavigationPanelCollection = new NavigationPanelCollection([], Router);
-            window.app = {
-                router: Router
-            };
-
+            require(["Popup/PopupView", "Popup/PopupModel"], function (View, Model) {
+                var Model = new Model({
+                    "id": "login",
+                    "label": "Login",
+                    "template": "",
+                    "actions": {
+                        ".registration": function () {
+                            debugger;
+                        }
+                    }
+                });
+                var View = new View({
+                    model: Model
+                });
+            })
         });
     };
     /**

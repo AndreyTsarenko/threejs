@@ -1,0 +1,9 @@
+<div class="popup-container <%= id %>">
+    <div class="header">
+        <%= label %>
+        <div class="close btn"></div>
+    </div>
+    <div class=".body">
+        <%= text %>
+    </div>
+</div>
