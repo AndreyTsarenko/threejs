@@ -31,6 +31,13 @@ define(["../ModelViewCollectionRouter/Collection", "./NavigationPanelModel",
                 var config = JSON.parse(resp);
                 this.reset(config);
             }.bind(this));
+        },
+        /**
+         * @description Method that is doing navigation on page
+         * @param {object} path
+         */
+        navigate: function (path) {
+            this.$pageRouter.open(path);
         }
     });
     return NavigationCollection;

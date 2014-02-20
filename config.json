@@ -35,28 +35,28 @@
                 {
                     "label": "Квартиры",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Дома",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Земля",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Офисы и склады",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 }
@@ -69,28 +69,28 @@
                 {
                     "label": "Квартиры",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Дома",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Земля",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Офисы и склады",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 }
@@ -103,28 +103,28 @@
                 {
                     "label": "Квартиры",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Дома",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Земля",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Офисы и склады",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 }
@@ -137,28 +137,28 @@
                 {
                     "label": "Квартиры",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Дома",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Земля",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 },
                 {
                     "label": "Офисы и склады",
                     "action": {
-                        "page:": "searching",
+                        "page": "searching",
                         "page_parameters": "office"
                     }
                 }
@@ -168,8 +168,8 @@
             "label": "login",
             "id": "log-in",
             "action": {
-                "page": "",
-                "page_parameters": ""
+                "page": "home",
+                "popup": "login"
             }
         }
     ]
