@@ -10,13 +10,14 @@ define(["../ModelViewCollectionRouter/View",
     var NavigationView = View.extend({
 
         $el_template: _.template(Navigation_element),
-        $sub_menu_tpl: _.template("<li><%= label %></li>"),
+        $sub_menu_tpl: _.template("<li class=\"btn\"><%= label %></li>"),
+        $collection: null,
         /**
          *
          */
         initCollectionView: function (config) {
+            this.$collection = config.collection;
             this.$el = config.render_to;
-            window.navigation = this;
             config.collection.on("reset", function () {
                 this._initModelViews(this.collection, NavigationView);
                 this._renderModels();
@@ -26,8 +27,12 @@ define(["../ModelViewCollectionRouter/View",
          *
          */
         initModelView: function (config) {
+            this.$collection = config.model.collection;
             var Model = config.model.toJSON();
             this.$el = $(this.$el_template(Model));
+            if (Model.action) {
+                this.$addListenerToMenuItem(this.$el.find(".btn.nav"), Model.action);
+            }
             if (Model.sub_menu instanceof Array) {
                 this.$creteSubMenu(Model.sub_menu, this.$el.find("ul"));
             }
@@ -37,10 +42,20 @@ define(["../ModelViewCollectionRouter/View",
          * @param Configs
          */
         $creteSubMenu: function (Configs, render_to){
-            var i, len;
+            var i, len, sub_menu_el;
             for (i = 0, len = Configs.length; i < len; i++) {
-                render_to.append($(this.$sub_menu_tpl(Configs[i])));
+                sub_menu_el = $(this.$sub_menu_tpl(Configs[i]));
+                render_to.append(sub_menu_el);
+                this.$addListenerToMenuItem(sub_menu_el, Configs[i].action)
             }
+        },
+        /**
+         *
+         */
+        $addListenerToMenuItem: function (el, action) {
+            el.on("click", function (action) {
+                this.$collection.navigate(action);
+            }.bind(this, action));
         }
     });
     return NavigationView;

@@ -34,27 +34,31 @@
             "sub_menu": [
                 {
                     "label": "Квартиры",
-                    "page:": "searching",
-                    "page_parameters": "flat"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Дома",
-                    "page:": "searching",
-                    "page_parameters": "house"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Земля",
-                    "page:": "searching",
-                    "page_parameters": "earth"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Офисы и склады",
-                    "page:": "searching",
-                    "page_parameters": "office"
-                },
-                {
-                    "label": "Login",
-                    "id": "log-in"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 }
             ]
         },
@@ -64,27 +68,31 @@
             "sub_menu": [
                 {
                     "label": "Квартиры",
-                    "page:": "searching",
-                    "page_parameters": "flat"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Дома",
-                    "page:": "searching",
-                    "page_parameters": "house"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Земля",
-                    "page:": "searching",
-                    "page_parameters": "earth"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Офисы и склады",
-                    "page:": "searching",
-                    "page_parameters": "office"
-                },
-                {
-                    "label": "Login",
-                    "id": "log-in"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 }
             ]
         },
@@ -94,27 +102,31 @@
             "sub_menu": [
                 {
                     "label": "Квартиры",
-                    "page:": "searching",
-                    "page_parameters": "flat"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Дома",
-                    "page:": "searching",
-                    "page_parameters": "house"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Земля",
-                    "page:": "searching",
-                    "page_parameters": "earth"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Офисы и склады",
-                    "page:": "searching",
-                    "page_parameters": "office"
-                },
-                {
-                    "label": "Login",
-                    "id": "log-in"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 }
             ]
         },
@@ -124,33 +136,41 @@
             "sub_menu": [
                 {
                     "label": "Квартиры",
-                    "page:": "searching",
-                    "page_parameters": "flat"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Дома",
-                    "page:": "searching",
-                    "page_parameters": "house"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Земля",
-                    "page:": "searching",
-                    "page_parameters": "earth"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 },
                 {
                     "label": "Офисы и склады",
-                    "page:": "searching",
-                    "page_parameters": "office"
-                },
-                {
-                    "label": "Login",
-                    "id": "log-in"
+                    "action": {
+                        "page:": "searching",
+                        "page_parameters": "office"
+                    }
                 }
             ]
         },
         {
             "label": "login",
-            "id": "log-in"
+            "id": "log-in",
+            "action": {
+                "page": "",
+                "page_parameters": ""
+            }
         }
     ]
 }
