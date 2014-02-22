@@ -8,18 +8,22 @@
 define(["../ModelViewCollectionRouter/View", "text!/templates/popup.xml"], function (View,template) {
     var Popup = View.extend({
         $main_template: _.template(template),
+        onRootElementLoaded: null,
         /**
          *
          */
         initModelView: function () {
             var Model = this.model.toJSON();
             if (Model.template) {
-                require([Model.template], function (template) {
-                    Model += _.template(template, Model);
-                    debugger;
+                require([Model.template], function (teplate) {
+                    Model.text += teplate;
+                    this.$el = $(this.$main_template(Model));
+                    this.onRootElementLoaded();
                 }.bind(this));
+            } else {
+                this.$el = $(this.$main_template(Model));
+                this.onRootElementLoaded();
             }
-            this.$el = $(this.$main_template);
         }
     });
     return Popup;

@@ -9,7 +9,8 @@ define(["../ModelViewCollectionRouter/Model"], function (Model) {
     var pageModel = Model.extend({
         defaults: {
             name: "",
-            window: false
+            window: false,
+            "content_view": null
         }
     });
 });

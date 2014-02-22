@@ -16,6 +16,9 @@ define([], function () {
          * @param config
          */
         initialize: function (config) {
+            if (config.onRootElementLoaded) {
+                this.onRootElementLoaded = config.onRootElementLoaded;
+            }
             if (config.model) {
                 this.$collection = config.model.collection;
                 this.initModelView(config);

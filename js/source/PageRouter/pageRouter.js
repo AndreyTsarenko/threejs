@@ -5,7 +5,8 @@
  * Time: 11:22
  * To change this template use File | Settings | File Templates.
  */
-define(["../ModelViewCollectionRouter/Router"], function (Router) {
+define(["../ModelViewCollectionRouter/Router", "Pages/pageCollection", "Pages/pageView"],
+    function (Router, PageCollection, PageView) {
     var pageRouter = Router.extend({
         /**
          * @description Shown page in the website
@@ -29,19 +30,17 @@ define(["../ModelViewCollectionRouter/Router"], function (Router) {
          *
          */
         $initPages: function (pages_config) {
-            require(["Pages/pageCollection", "Pages/pageView"], function (PageCollection, PageView) {
-                this.$pages = new PageCollection(pages_config);
-                this.$pages_view = new PageView({
-                    collection: this.$pages,
-                    render_to: $("body")
-                });
-                if (this.$hash_to_turn) {
-                    this.navigate(this.$hash_to_turn, {trigger: true, replace: true});
-                    this.$hash_to_turn = null;
-                } else {
-                    this.navigate("#page-home", {trigger: true, replace: true});
-                }
-            }.bind(this));
+            this.$pages = new PageCollection(pages_config);
+            this.$pages_view = new PageView({
+                collection: this.$pages,
+                render_to: $("body")
+            });
+            if (this.$hash_to_turn) {
+                this.navigate(this.$hash_to_turn, {trigger: true, replace: true});
+                this.$hash_to_turn = null;
+            } else {
+                this.navigate("#page-home", {trigger: true, replace: true});
+            }
         },
         /**
          *
@@ -140,6 +139,18 @@ define(["../ModelViewCollectionRouter/Router"], function (Router) {
             }
             popup_hash = popup.length ?   "/popup-" + popup.join("&") : "";
             this.navigate(part_url[0] + popup_hash, {trigger: true, replace: true});
+        },
+        /**
+         * @public
+         * @description that add content to page
+         * @param id id of page and content
+         * @param View view of content
+         */
+        setPageContent: function (id, View) {
+            var page = this.$pages.findWhere({
+                name: id
+            });
+            page.set("content_view", View);
         }
     });
     return pageRouter;

@@ -18,7 +18,7 @@
                 var Model = new Model({
                     "id": "login",
                     "label": "Login",
-                    "template": "",
+                    "template": "text!/templates/login_body.xml",
                     "actions": {
                         ".registration": function () {
                             debugger;
@@ -26,7 +26,10 @@
                     }
                 });
                 var View = new View({
-                    model: Model
+                    model: Model,
+                    onRootElementLoaded: function () {
+                        Router.setPageContent(Model.get("id"), View);
+                    }
                 });
             })
         });

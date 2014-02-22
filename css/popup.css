@@ -1,0 +1,29 @@
+.popup-container {
+    position: absolute;
+    width: 50%;
+    left: 25%;
+    height: 60%;
+    top: 20%;
+    background-color: #303030;
+    color: white;
+    border: 1px solid rgb(134, 134, 134);
+
+    -moz-user-select: -moz-none;
+    -o-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+.popup-container .header {
+    line-height: 1.5;
+    font-size: 1.5em;
+    text-indent: .3em;
+    border-bottom: 1px solid rgb(134, 134, 134);
+}
+.popup-container .header .close.btn {
+    width: 1.5em;
+    height: 1.5em;
+    float: right;
+    border-left: 1px solid rgb(134, 134, 134);
+    font-family: sans-serif;
+}

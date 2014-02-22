@@ -33,13 +33,17 @@ define(["../ModelViewCollectionRouter/View", "text!/templates/page_tempate.xml"]
          * @param Model
          */
         addEventListenerToModel: function (Model) {
+            var that = this;
             Model.on("change:active", function (Model, value, i_dont_know_what_is_it) {
                 if (value === true) {
-                    this.$el.attr("shown", "true");
+                    that.$el.attr("shown", "true");
                 } else {
-                    this.$el.attr("shown", "false");
+                    that.$el.attr("shown", "false");
                 }
-            }.bind(this));
+            });
+            Model.on("change:content_view", function (Model, Value, Strange_object) {
+                that.$el.append(Value.$el);
+            })
         }
         /**
          *
