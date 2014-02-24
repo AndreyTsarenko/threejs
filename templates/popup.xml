@@ -3,7 +3,7 @@
         <%= label %>
         <div class="close btn"></div>
     </div>
-    <div class=".body">
+    <div class="body">
         <%= text %>
     </div>
 </div>

@@ -14,14 +14,14 @@
             function (pageRouter, NavigationPanelCollection) {
             var Router = new pageRouter();
             var NavigationPanelCollection = new NavigationPanelCollection([], Router);
-            require(["Popup/PopupView", "Popup/PopupModel"], function (View, Model) {
+            require(["PopupLogin/PopupLoginView", "PopupLogin/PopupLoginModel"], function (View, Model) {
                 var Model = new Model({
                     "id": "login",
                     "label": "Login",
                     "template": "text!/templates/login_body.xml",
+                    $pageRouter: Router,
                     "actions": {
                         ".registration": function () {
-                            debugger;
                         }
                     }
                 });

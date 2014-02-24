@@ -19,11 +19,22 @@ define(["../ModelViewCollectionRouter/View", "text!/templates/popup.xml"], funct
                     Model.text += teplate;
                     this.$el = $(this.$main_template(Model));
                     this.onRootElementLoaded();
+                    this.$addActionsAndEventListeners();
                 }.bind(this));
             } else {
                 this.$el = $(this.$main_template(Model));
                 this.onRootElementLoaded();
+                this.$addActionsAndEventListeners();
             }
+        },
+        /**
+         *
+         */
+        $addActionsAndEventListeners: function () {
+            var model = this.model.toJSON();
+            this.$el.find(".close.btn").on("click",function () {
+                model.$pageRouter.closePopup(model.id);
+            });
         }
     });
     return Popup;

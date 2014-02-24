@@ -12,6 +12,7 @@ body {
     height: 100%;
     background: #f8f8f8 url("../image/main-background.jpg") no-repeat;
     background-size: 100% auto;
+    font-family: sans-serif;
 }
 div[shown=true] {
     display: block;

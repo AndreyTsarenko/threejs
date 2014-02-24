@@ -5,15 +5,14 @@
  * Time: 16:04
  * To change this template use File | Settings | File Templates.
  */
-define(["../ModelViewCollectionRouter/Model"], function (Model) {
+define(["../Popup/PopupModel"], function (Model) {
     var Popup = Model.extend({
         defaults: {
             id: "",
             label: "",
             text: "",
-            template: "",
-            actions: null,
-            $pageRouter: null
+//            template: "",
+            actions: null
         }
     });
     return Popup;

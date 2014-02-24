@@ -1,0 +1,47 @@
+.popup-container.login {
+    width: 410px;
+    height: 214px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -205px;
+    margin-top: -160px;
+}
+.pop-up-login .body .user_input[name=login]{
+    margin-top: 20px;
+}
+.pop-up-login .body input.user_input:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+.pop-up-login .body .user_input:focus {
+    border: none;
+    outline: none;
+}
+.pop-up-login .body .user_input{
+    display: block;
+    width: 353px;
+    margin-left: 8px;
+    margin-top: 8px;
+    outline: 1px 1px solid gray;
+    padding: 9px 20px 9px 20px;
+    border: none;
+    font-size: 20px;
+}
+.service_button:hover {
+    background-color: #777777;
+}
+.service_button {
+    float: left;
+    margin-top: 20px;
+    font-size: 20px;
+    text-align: center;
+    background-color: #303030;
+    width: 50%;
+    height: 45px;
+    line-height: 2em;
+    color: white;
+    vertical-align: middle;
+    font-family: Europe;
+    border: none;
+    outline: 1px solid rgb(134, 134, 134);
+}
