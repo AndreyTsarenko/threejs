@@ -18,3 +18,7 @@ app.post("/login", function (req, res) {
     var password = req.body.password;
     var login = req.body.login;
 });
+
+app.post("/registration", function (req, res) {
+    console.log("all in its right place")
+});

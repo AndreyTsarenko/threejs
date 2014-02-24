@@ -1,0 +1,7 @@
+<form method="POST" action="/registration">
+    <input class="registration_fields" name="name" placeholder="Имя"></input>
+    <input class="registration_fields" name="second_name" placeholder="Фамилия"></input>
+    <input class="registration_fields" name="E-mail" placeholder="E-mail"></input>
+    <input class="registration_fields" name="password" placeholder="Пароль" type="password"></input>
+    <input class="btn start-registration" type="submit" value="Регистрация"></input>
+</form>

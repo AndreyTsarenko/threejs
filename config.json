@@ -15,11 +15,11 @@
             "type": "page"
         },
         {
-            "name": "login",
+            "name": "registration",
             "type": "pop-up"
         },
         {
-            "name": "warning",
+            "name": "login",
             "type": "pop-up"
         },
         {

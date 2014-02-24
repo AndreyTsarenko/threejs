@@ -1,7 +1,7 @@
 #navigation-panel {
     position: fixed;
     width: 100%;
-    min-width: 100px;
+    min-width: 1000px;
     z-index: 2;
 }
 .nav-element-container {

@@ -1,23 +1,23 @@
-.popup-container.login {
-    width: 410px;
-    height: 214px;
+.popup-container.registration {
+    width: 412px;
+    height: 314px;
     position: absolute;
     left: 50%;
     top: 50%;
-    margin-left: -205px;
-    margin-top: -160px;
+    margin-top: -157px;
+    margin-left: -206px;
 }
-.pop-up-login .body .user_input[name=login]{
-    margin-top: 20px;
-}
-.pop-up-login .body input.user_input:-webkit-autofill {
+.registration_fields:-webkit-autofill {
     -webkit-box-shadow: 0 0 0px 1000px white inset;
 }
-.pop-up-login .body .user_input:focus {
+.registration_fields:focus {
     border: none;
     outline: none;
 }
-.pop-up-login .body .user_input{
+.registration_fields[name=name] {
+    margin-top: 20px;
+}
+.registration_fields {
     display: block;
     width: 353px;
     margin-left: 8px;
@@ -27,16 +27,17 @@
     border: none;
     font-size: 20px;
 }
-.popup-container.login .service_button:hover {
+.start-registration:hover {
     background-color: #777777;
 }
-.popup-container.login .service_button {
+
+.start-registration {
     float: left;
     margin-top: 20px;
     font-size: 20px;
     text-align: center;
     background-color: #303030;
-    width: 50%;
+    width: 100%;
     height: 45px;
     line-height: 2em;
     color: white;

@@ -22,6 +22,9 @@
                     $pageRouter: Router,
                     "actions": {
                         ".registration": function () {
+                            Router.open({
+                                popup: "registration"
+                            }, true);
                         }
                     }
                 });
@@ -32,6 +35,28 @@
                     }
                 });
             })
+            require(["PopupRegistration/PopupRegistrationView", "PopupRegistration/PopupRegistrationModel"], function (View, Model) {
+                var Model = new Model({
+                    "id": "registration",
+                    "label": "Регистрация",
+                    "template": "text!/templates/registration_body.xml",
+                    $pageRouter: Router,
+                    "actions": {
+                        ".registration": function () {
+                            Router.open({
+                                popup: "registration"
+                            }, true);
+                        }
+                    }
+                });
+                var View = new View({
+                    model: Model,
+                    onRootElementLoaded: function () {
+                        Router.setPageContent(Model.get("id"), View);
+                    }
+                });
+            })
+
         });
     };
     /**

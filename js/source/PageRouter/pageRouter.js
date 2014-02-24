@@ -89,8 +89,9 @@ define(["../ModelViewCollectionRouter/Router", "Pages/pageCollection", "Pages/pa
                  *      object.page, // id of page
                  *      object.popup // id of popup up
                  * }
+         * @param  {boolean} [close_flag]
          */
-        open: function (object) {
+        open: function (object, close_flag) {
             var part_url = location.hash.split("/");
             var page, popup = [], i, len, popup_hash;
             if (part_url.length > 1) {
@@ -99,6 +100,9 @@ define(["../ModelViewCollectionRouter/Router", "Pages/pageCollection", "Pages/pa
             page = part_url[0].replace("#page-", "");
             if (object.page) {
                 page = object.page;
+            }
+            if (close_flag) {
+                popup = [];
             }
             if (object.popup) {
                 if (object.popup instanceof Array) {

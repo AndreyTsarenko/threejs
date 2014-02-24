@@ -37,7 +37,7 @@ define(["../ModelViewCollectionRouter/Collection", "./NavigationPanelModel",
          * @param {object} path
          */
         navigate: function (path) {
-            this.$pageRouter.open(path);
+            this.$pageRouter.open(path, true);
         }
     });
     return NavigationCollection;

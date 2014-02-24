@@ -31,10 +31,16 @@ define(["../ModelViewCollectionRouter/View", "text!/templates/popup.xml"], funct
          *
          */
         $addActionsAndEventListeners: function () {
+            var key;
             var model = this.model.toJSON();
             this.$el.find(".close.btn").on("click",function () {
                 model.$pageRouter.closePopup(model.id);
             });
+            if (model.actions) {
+                for (key in model.actions) {
+                    this.$el.find(key).on("click", model.actions[key]);
+                }
+            }
         }
     });
     return Popup;
